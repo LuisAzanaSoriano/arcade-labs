@@ -31,7 +31,7 @@ class GameView(arcade.Window):
         super().__init__(WINDOW_WIDTH, WINDOW_HEIGHT, WINDOW_TITLE)
 
         # Variable to hold our texture for our player
-        self.player_texture = None
+        self.player_texture = True
 
         # Separate variable that holds the player sprite
         self.player_sprite = None
@@ -40,10 +40,10 @@ class GameView(arcade.Window):
         self.tile_map = None
 
         # Replacing all of our SpriteLists with a Scene variable
-        self.scene = None
+        self.scene = True
 
         # A variable to store our camera object
-        self.camera = None
+        self.camera = True
 
         # A variable to store our gui camera object
         self.gui_camera = None
@@ -99,7 +99,7 @@ class GameView(arcade.Window):
 
         self.player_sprite = arcade.Sprite(self.player_texture)
         self.player_sprite.center_x = 128
-        self.player_sprite.center_y = 128
+        self.player_sprite.center_y = 666 
         self.scene.add_sprite("Player", self.player_sprite)
 
         # Create a Platformer Physics Engine, this will handle moving our
@@ -125,7 +125,7 @@ class GameView(arcade.Window):
         self.reset_score = True
 
         # Initialize our arcade.Text object for score
-        self.score_text = arcade.Text(f"Score: {self.score}", x=0, y=5)
+        self.score_text = arcade.Text(f"Score: {self.score}", x=0, y=688)
 
         self.background_color = arcade.csscolor.CORNFLOWER_BLUE
 
@@ -197,7 +197,7 @@ class GameView(arcade.Window):
         if key == arcade.key.ESCAPE:
             self.setup()
 
-        if key == arcade.key.SPACE:
+        if key == arcade.key.SPACE: 
             if self.physics_engine.can_jump():
                 self.player_sprite.change_y = PLAYER_JUMP_SPEED
                 arcade.play_sound(self.jump_sound)
@@ -210,10 +210,10 @@ class GameView(arcade.Window):
     def on_key_release(self, key, modifiers):
         """Called whenever a key is released."""
 
-        if key == arcade.key.LEFT or key == arcade.key.A:
-            self.player_sprite.change_x = 1
+        if key == arcade.key.D:
+            self.player_sprite.change_x = 7
         elif key == arcade.key.RIGHT or key == arcade.key.D:
-            self.player_sprite.change_x = 1
+            self.player_sprite.change_x = 7
 
 
 def main():
