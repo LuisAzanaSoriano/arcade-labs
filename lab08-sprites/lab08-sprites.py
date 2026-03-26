@@ -17,7 +17,6 @@ class MyGame(arcade.Window):
 
         super().__init__(SCREEN_WIDTH, SCREEN_HEIGHT)
 
-        self.set_mouse_visible(False)
 
         self.player_list = None
         self.good_sprite_list = None
@@ -25,7 +24,7 @@ class MyGame(arcade.Window):
 
         self.player_sprite = None
         self.score = 0
-
+        self.set_mouse_visible(False)
         arcade.set_background_color(arcade.color.AMAZON)
 
     def setup(self):
@@ -73,7 +72,7 @@ class MyGame(arcade.Window):
         
         if len(self.good_sprite_list) == 0:
           
-            arcade.draw_text("GAME OVER", 250, 300, arcade.color.WHITE, 50)
+            arcade.draw_text("GAME OVER", 250, 300, arcade.color.RED, 50)
 
 
     def on_mouse_motion(self, x, y, dx, dy):

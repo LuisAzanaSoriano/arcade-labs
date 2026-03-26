@@ -1,15 +1,11 @@
-"""
-This is a sample program to show how to draw using the Python programming
-language and the Arcade library.
-"""
 
 # Import the "arcade" library
+__cached__arcade = None
 import arcade
 
-# Open up a window.
-# From the "arcade" library, use a function called "open_window"
-# Set the window title to "Drawing Example"
-# Set the and dimensions (width and height)
+SCREEN_WIDTH = 800
+SCREEN_HEIGHT = 600
+
 arcade.open_window(800, 600, "Drawing Example")
 
 # Set the background color
